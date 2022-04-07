@@ -3,9 +3,13 @@ import math
 
 home_payment = 15000
 food_payment = 13000
-internet_payment = 250 + 250 + 450
+pets_payment = 1500
+transport_payment = 2000
+internet_payment = 165 + 250 + 350
 
-payments = [home_payment, food_payment, internet_payment]
+total_salary = 35000
+
+payments = [home_payment, food_payment, internet_payment, transport_payment, pets_payment]
 
 percentages = []
 clears = []
@@ -17,7 +21,7 @@ def calculate(salary, payment):
 
 
 for payment in payments:
-    percentage = calculate(35000, payment)
+    percentage = calculate(total_salary, payment)
 
     percentages.append(percentage)
     clears.append(payment)
@@ -29,3 +33,4 @@ calculated_clears = functools.reduce(lambda a, b: a+b, clears)
 
 print(f"Sum of percentage: {calculated_percentages}")
 print(f"Sum of clear: {calculated_clears}")
+print(f"You'll have: {total_salary - calculated_clears}")
